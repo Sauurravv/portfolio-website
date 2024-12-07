@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="Website Icon" type="jpg" href="webicon.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="fonts/PPNeueMontreal-Book.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/blog.css">
+    <title>Cactusaurav</title>
+</head>
+
+<body>
+    <header>
+        <div class="mac-navbar">
+            <div class="mac-btn red" onclick="closeWebsite()"></div>
+            <div class="mac-btn yellow" onclick="minimizeWindow()"></div>
+            <div class="mac-btn green" onclick="toggleFullScreen()"></div>
+            <div class="mac-title">cactusaurav.com</div>
+            <div id="clock" class="clock-container"></div>
+        </div>
+    </header>
+    <div class="navbar-line"></div>
+    <div>
+        <ul class="navbar" id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="blog-section">
+        <h2>Blog</h2>
+        <p> I wrote <span class="writes">something</span> because I wanted to read it.</p>
+
+        <div class="search-container">
+            <img src="Image/search.png" alt="Search Icon" class="search-icon">
+            <input type="search" id="search" placeholder="Search..." oninput="searchPosts()">
+        </div>
+
+        <div class="blog-list">
+            <div class="blog-item blog1" data-image="ai.jpg">
+                <div class="date">
+                    <h4>Aug 1, 2024</h4>
+                </div>
+                <div class="blog">
+                    <h3 class="btittle"><a href="ai.html" class="hover-link">AI: A Buzzword!</a></h3>
+                </div>
+            </div>
+
+            <div class="blog-item blog2" data-image="micro-animations.jpg">
+                <div class="date">
+                    <h4>Sep 10, 2024</h4>
+                </div>
+                <div class="blog">  <h3 class="btittle"><a href="#" class="hover-link">The Transformative Power of Data Science🪄</a></h3>
+                </div>
+            </div>
+<!--
+            <div class="blog-item blog3" data-image="ai-generative.jpg">
+                <div class="date">
+                    <h4>Aug 25, 2023</h4>
+                </div>
+                <div class="blog">
+                    <h3 class="btittle" "><a href="#" class="hover-link">Generative AI: Bright and Dark Sides</a></h3>
+                </div>
+            </div>
+
+            <div class="blog-item blog3" data-image="ai-generative.jpg"></div>
+                <div class="date">
+                    <h4>Aug 25, 2023</h4>
+                </div>
+                <div class="blog">
+                    <h3 class="btittle" "><a href="#" class="hover-link">Generative AI: Bright and Dark Sides</a></h3>
+                </div>
+-->
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-line"></div>
+    </footer>
+
+    <script src="javascript/blog.js"></script>
+</body>
+
+</html>

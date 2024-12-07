@@ -1,0 +1,289 @@
+@font-face {
+    font-family: 'PP Neue Montreal Book';
+    src: url('/fonts/PPNeueMontreal-Book.woff2') format('woff2'),
+        url('/fonts/PPNeueMontreal-Book.woff') format('woff'),
+        url('/fonts/PPNeueMontreal-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    font-family: 'PP Neue Montreal Book', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+    background-color: black;
+    color: white;
+}
+
+header {
+    background-color: rgba(107, 106, 106, 0.201);
+}
+
+.mac-navbar {
+    display: flex;
+    height: 20px;
+    padding: 5px;
+}
+
+.mac-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+    transition: 0.5s;
+}
+
+.red {
+background-color: #ff5f57;
+}
+
+.yellow {
+    background-color: #ffbd2e;
+}
+
+.green {
+    background-color: #28c745;
+}
+
+.mac-title {
+    color: grey;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 10px;
+    font-size: 14px;
+    font-family: 'PP Neue Montreal Book', sans-serif;
+    font-weight: 400;
+}
+
+.clock-container {
+    font-family: 'PP Neue Montreal Book', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(252, 252, 252);
+    font-size: 12px;
+}
+
+.navbar {
+    display: flex;
+    list-style-type: none;
+    margin: auto;
+    gap: 60px;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    padding-top: 0.5rem;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    border: white;
+    position: relative;
+}
+
+.navbar a {
+    color: rgba(91, 90, 90, 0.821);
+    font-size: 15px;
+    font-family: 'PP Neue Montreal Book', sans-serif;
+    font-weight: bold;
+    line-height: 20px;
+    display: block;
+    padding: 2px 12px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    transition: 1.5s;
+    color: white;
+}
+
+
+.navbar-line {
+    width: 100%;
+    height: 1.250px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 68px;
+    z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 0;
+        gap: 30px;
+    }
+
+    .navbar a {
+        margin-inline-end: -20px;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .navbar-line {
+        top: 4rem;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 300px;
+    background-color: #000000;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Media query for mobile and tablet views */
+@media (min-width: 0px) and (max-width: 768px) {
+    #search {
+        display: none;
+    }
+
+    #contact-list {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .sidebar {
+        order: 1;
+        background-color: rgb(0, 0, 0);
+        box-shadow: none;
+        margin-left: -15px;
+        padding-top: 5px;
+
+        /* Sidebar will appear first */
+    }
+
+    .contact-card {
+        order: 2;
+        box-shadow: none; /* Contact card will appear second */
+    }
+}
+
+/* Search input styling */
+#search {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    margin-left: -10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #000000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+#search::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Contact list styles */
+#contact-list {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+#contact-list li {
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#contact-list li.active {
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+}
+
+/* Contact card styles */
+.contact-card {
+    flex: 1;
+    background: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 1);
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Profile picture styling */
+.profile-picture img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Contact info styling */
+.contact-info h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+
+.contact-methods {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.method img {
+    width: 36px;
+    height: 36px;
+}
+
+.method p {
+    text-align: center;
+    margin-top: 5px;
+}
+/* Contact details */
+.contact-details {
+    margin-top: 40px;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 768px) {
+    .sidebar{
+        display: none;
+        transition: display 0.3s ease;
+    }
+    .contact-card{
+        border-radius: 10px;
+        max-width: 400px;
+    }
+}
