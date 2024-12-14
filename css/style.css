@@ -37,7 +37,7 @@ header {
     transition: transform 0.1s ease-out;
     z-index: 1;
     mix-blend-mode: difference;
-    }
+}
 
 .mac-navbar {
     display: flex;
@@ -191,7 +191,7 @@ header {
 #name h2 {
     font-family: 'PP Neue Montreal Book', sans-serif;
     font-weight: 500;
-    font-size: 16px; 
+    font-size: 16px;
 }
 
 #tag {
@@ -350,11 +350,13 @@ header {
         border-radius: 10px;
     }
 }
+
 .lms-more a {
     text-decoration: none;
     color: white;
     margin-left: 20px;
-    position: relative; /* Add this to position ::after relative to the link */
+    position: relative;
+    /* Add this to position ::after relative to the link */
 }
 
 .lms-more a::after {
@@ -540,7 +542,7 @@ header {
     transition: text-decoration 0.3s ease, color 0.3s ease;
 }
 
-.goals-list li input:checked + span {
+.goals-list li input:checked+span {
     text-decoration: line-through;
     color: inherit;
 }
@@ -689,23 +691,28 @@ header {
 
 .ps a {
     display: flex;
-     justify-content: center; /* Centers horizontally */
-     align-items: center;
-    color: #ffffff; /* Change to your preferred color */
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    color: #ffffff;
+    /* Change to your preferred color */
     text-decoration: none;
     margin-bottom: -30px;
 }
+
 @media only screen and (max-width: 500px) {
-    .emoji-container{
+    .emoji-container {
         font-size: 14px;
         margin-left: -20px;
     }
-    .emoji-text{
+
+    .emoji-text {
         font-size: 14px;
         font-weight: 300;
         margin-left: -15px;
     }
-    .ps a{
+
+    .ps a {
         font-size: 14px;
         margin-left: 40px;
     }

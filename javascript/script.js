@@ -1,25 +1,41 @@
-/*mouse follow up*/
+/* script.js */
 document.addEventListener('mousemove', function(e) {
     const circle = document.getElementById('circle');
     const mouseX = e.clientX;
     const mouseY = e.clientY + window.scrollY; // Adjust for scroll position
     circle.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
-});
-
-document.addEventListener('scroll', function() {
-    const circle = document.getElementById('circle');
-    circle.style.transform += `translate(0px, ${window.scrollY}px)`;
-});
-
-document.addEventListener('mousemove', function() {
-    const circle = document.getElementById('circle');
     circle.style.opacity = 1;
+
+    // Clear previous timeout
     clearTimeout(window.mouseTimeout);
-    window.mouseTimeout = setTimeout(() => {
-        circle.style.opacity = 0.5; // Change opacity when the mouse stops moving
-    }, 200); // Time in milliseconds to change the opacity after the mouse stops
 });
 
+// Functions to enlarge and shrink the circle
+function enlargeCircle() {
+    const circle = document.getElementById('circle');
+    circle.style.width = "50px";
+    circle.style.height = "50px";
+}
+
+function shrinkCircle() {
+    const circle = document.getElementById('circle');
+    circle.style.width = "20px";
+    circle.style.height = "20px";
+}
+
+// Event listeners for hover effects
+const nameElement = document.getElementById('name');
+const selectedPostElement = document.getElementById('selected-post');
+const notableWorkElement = document.getElementById('notable-work');
+
+nameElement.addEventListener('mouseenter', enlargeCircle);
+nameElement.addEventListener('mouseleave', shrinkCircle);
+
+selectedPostElement.addEventListener('mouseenter', enlargeCircle);
+selectedPostElement.addEventListener('mouseleave', shrinkCircle);
+
+notableWorkElement.addEventListener('mouseenter', enlargeCircle);
+notableWorkElement.addEventListener('mouseleave', shrinkCircle);
 
 /*apple ko tinta button*/
 

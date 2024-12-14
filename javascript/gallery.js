@@ -15,15 +15,7 @@ document.addEventListener('mousemove', function() {
     const circle = document.getElementById('circle');
     circle.style.opacity = 1;
     clearTimeout(window.mouseTimeout);
-    window.mouseTimeout = setTimeout(() => {
-        circle.style.opacity = 0.5; // Change opacity when the mouse stops moving
-    }, 200); // Time in milliseconds to change the opacity after the mouse stops
 });
-document.addEventListener("DOMContentLoaded", function () {
-    // Theme Toggle Functionality
-    const themeButton = document.getElementById('theme-button');
-    const themeIcon = document.getElementById('theme-icon');
-    let isDarkTheme = localStorage.getItem('theme') === 'dark';
 
     function updateTheme() {
         document.body.classList.toggle('dark-theme', isDarkTheme);
@@ -200,4 +192,3 @@ document.addEventListener("DOMContentLoaded", function () {
             prevButton.click();
         }
     });
-});
