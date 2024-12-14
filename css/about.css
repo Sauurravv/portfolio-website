@@ -26,7 +26,17 @@ body {
 header {
     background-color: rgba(107, 106, 106, 0.201);
 }
-
+#circle {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+    z-index: 1;
+    mix-blend-mode: difference;
+    }
 .mac-navbar {
     display: flex;
     height: 20px;

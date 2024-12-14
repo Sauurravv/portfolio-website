@@ -1,4 +1,24 @@
+/*mouse follow up*/
+document.addEventListener('mousemove', function(e) {
+    const circle = document.getElementById('circle');
+    const mouseX = e.clientX;
+    const mouseY = e.clientY + window.scrollY; // Adjust for scroll position
+    circle.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
+});
 
+document.addEventListener('scroll', function() {
+    const circle = document.getElementById('circle');
+    circle.style.transform += `translate(0px, ${window.scrollY}px)`;
+});
+
+document.addEventListener('mousemove', function() {
+    const circle = document.getElementById('circle');
+    circle.style.opacity = 1;
+    clearTimeout(window.mouseTimeout);
+    window.mouseTimeout = setTimeout(() => {
+        circle.style.opacity = 0.5; // Change opacity when the mouse stops moving
+    }, 200); // Time in milliseconds to change the opacity after the mouse stops
+});
 document.addEventListener("DOMContentLoaded", function () {
     // Theme Toggle Functionality
     const themeButton = document.getElementById('theme-button');
