@@ -13,8 +13,8 @@ document.addEventListener('mousemove', function(e) {
 // Functions to enlarge and shrink the circle
 function enlargeCircle() {
     const circle = document.getElementById('circle');
-    circle.style.width = "50px";
-    circle.style.height = "50px";
+    circle.style.width = "35px";
+    circle.style.height = "35px";
 }
 
 function shrinkCircle() {
