@@ -26,6 +26,7 @@ body {
 header {
     background-color: rgba(107, 106, 106, 0.201);
 }
+
 #circle {
     width: 20px;
     height: 20px;
@@ -36,7 +37,8 @@ header {
     transition: transform 0.1s ease-out;
     z-index: 1;
     mix-blend-mode: difference;
-    }
+}
+
 .mac-navbar {
     display: flex;
     height: 20px;
@@ -52,7 +54,7 @@ header {
 }
 
 .red {
-background-color: #ff5f57;
+    background-color: #ff5f57;
 }
 
 .yellow {
@@ -183,6 +185,13 @@ background-color: #ff5f57;
     padding: 20px;
 }
 
+.saurav {
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
 .saurav img {
     border-radius: 12px;
     display: block;
@@ -191,12 +200,22 @@ background-color: #ff5f57;
     height: auto;
     filter: grayscale(100%);
     opacity: 0.8;
+    transition: transform 2s, filter 2s, opacity 2s; /* Added transitions */
 }
 
-.light-theme .saurav img {
-    transition: 0.5s;
+#sauravDiv:hover img,.intro:hover .white-text {
+    transform: scale(0.975); /* Corrected transform property */
+    filter: grayscale(0%);
     opacity: 1;
+    transition: transform 2s, filter 2s, opacity 2s; /* Ensure transition is also on hover */
 }
+
+.intro:hover .white-text {
+    font-size: 18px;
+    color: #F5DEB3; /* Optional: Add color change for visibility */
+    transition: transform 2s, font-size 2s, color 2s; /* Added transitions */
+}
+
 
 .intro {
     max-width: 600px;
@@ -235,11 +254,13 @@ background-color: #ff5f57;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-image: url('Image/saurav.jpg'); /* Path to your profile image */
+    background-image: url('Image/saurav.jpg');
+    /* Path to your profile image */
     background-size: cover;
     margin-right: 10px;
     filter: grayscale(1);
 }
+
 .profile-pic1 img {
     width: 50px;
     height: 50px;
@@ -258,16 +279,18 @@ background-color: #ff5f57;
     font-family: 'PP Neue Montreal Book', sans-serif;
     font-weight: 500;
     font-size: 24px;
-    color: #ffffff; /* Adjust color as needed */
+    color: #ffffff;
+    /* Adjust color as needed */
 }
 
 .profile-description {
     font-family: 'PP Neue Montreal Book', sans-serif;
     font-size: 16px;
-    color: #666; /* Adjust color as needed */
+    color: #666;
+    /* Adjust color as needed */
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -413,11 +436,13 @@ a{
     margin-right: 15px;
 
 }
+
 .light-theme .emoji-container,
 .light-theme .emoji-text,
-.light-theme .ps{
+.light-theme .ps {
     color: black;
 }
+
 .emoji-text {
     font-size: 1rem;
     color: #ffffff;
