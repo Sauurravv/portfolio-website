@@ -1,22 +1,43 @@
-/*mouse follow up*/
+/* mouse follow up */
 document.addEventListener('mousemove', function(e) {
     const circle = document.getElementById('circle');
     const mouseX = e.clientX;
     const mouseY = e.clientY + window.scrollY; // Adjust for scroll position
     circle.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
-});
-
-document.addEventListener('scroll', function() {
-    const circle = document.getElementById('circle');
-    circle.style.transform += `translate(0px, ${window.scrollY}px)`;
-});
-
-document.addEventListener('mousemove', function() {
-    const circle = document.getElementById('circle');
     circle.style.opacity = 1;
+
+    // Clear previous timeout
     clearTimeout(window.mouseTimeout);
 });
 
+// Functions to enlarge and shrink the circle
+function enlargeCircle() {
+    const circle = document.getElementById('circle');
+    circle.style.width = "35px";
+    circle.style.height = "35px";
+}
+
+function shrinkCircle() {
+    const circle = document.getElementById('circle');
+    circle.style.width = "20px";
+    circle.style.height = "20px";
+}
+
+// Event listeners for hover effects
+const tittleElements = document.querySelectorAll('.tittle');
+const tittle2Elements = document.querySelectorAll('.tittle2');
+
+// Adding event listeners to elements with class tittle
+tittleElements.forEach(function(tittleElement) {
+    tittleElement.addEventListener('mouseenter', enlargeCircle);
+    tittleElement.addEventListener('mouseleave', shrinkCircle);
+});
+
+// Adding event listeners to elements with class tittle2
+tittle2Elements.forEach(function(tittle2Element) {
+    tittle2Element.addEventListener('mouseenter', enlargeCircle);
+    tittle2Element.addEventListener('mouseleave', shrinkCircle);
+});
 
 function closeWebsite() {
     window.close();
@@ -72,34 +93,6 @@ function enterFullScreenOnMobile() {
 
 window.onload = enterFullScreenOnMobile;
 
-window.onscroll = function () { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("backToTopBtn").style.display = "block";
-        document.getElementById("arrowIcon").src = getArrowImage();
-        document.getElementById("backToTopBtn").href = "#top";
-        document.getElementById("backToTopBtn").title = "Back to Top";
-        document.getElementById("backToTopBtn").setAttribute("aria-label", "Back to Top");
-    } else {
-        document.getElementById("backToTopBtn").style.display = "none";
-    }
-}
-
-function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-function getArrowImage() {
-    var isDarkTheme = document.body.classList.contains("dark-theme");
-    if (isDarkTheme) {
-        return "Image/dark-up-arrow.png";
-    } else {
-        return "Image/up-arrow.png";
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const blogItems = document.querySelectorAll('.blog-item');
     const searchInput = document.getElementById('search');
@@ -114,8 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         blogItems.forEach(item => {
-            const title = item.querySelector('.btittle').textContent.toLowerCase();
-            const content = item.querySelector('.btittle a').textContent.toLowerCase();
+            const title = item.querySelector('.tittle, .tittle2').textContent.toLowerCase();
+            const content = item.querySelector('.tittle a, .tittle2 a').textContent.toLowerCase();
             
             if (title.includes(query) || content.includes(query)) {
                 item.style.display = 'block';
@@ -126,25 +119,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     searchInput.addEventListener('input', searchPosts);
-
-    blogItems.forEach(item => {
-        const floatingImage = item.querySelector('.floating-image');
-        const title = item.querySelector('.btittle');
-
-        item.addEventListener('mouseenter', () => {
-            floatingImage.style.opacity = '1';
-
-            item.addEventListener('mousemove', (e) => {
-                // Calculate new position of the floating image
-                const rect = item.getBoundingClientRect();
-                floatingImage.style.left = `${e.clientX - rect.left}px`;
-                floatingImage.style.top = `${e.clientY - rect.top}px`;
-            });
-        });
-
-        item.addEventListener('mouseleave', () => {
-            floatingImage.style.opacity = '0';
-            item.removeEventListener('mousemove', () => {});
-        });
-    });
 });

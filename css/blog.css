@@ -37,6 +37,7 @@ header {
     z-index: 1;
     mix-blend-mode: difference;
     }
+
 .mac-navbar {
     display: flex;
     height: 20px;
@@ -202,7 +203,7 @@ background-color: #ff5f57;
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-left: 50px;
     width: fit-content;
     border: 2px solid transparent;
@@ -244,17 +245,9 @@ background-color: #ff5f57;
     color: #ffffff;
 }
 
-.dark-theme .blog-section input[type="search"]:focus {
-    box-shadow: none;
-    color: white;
-}
 
 .blog-section a {
     text-decoration: none;
     color: #ffffff;
-}
-
-
-.btittle{
-    margin-left: 30px;
+    margin-left:20px ;
 }
